@@ -97,7 +97,7 @@
 			'query' => array('response-content-disposition' =>'attachment; filename=fname.ext',
 			'response-content-type' => 'text/html',
 			'Expires' => $t = time() + (3600*24),
-			'KSSAccessKeyId' => "P2UPCMORAFON76Q6RTNQ",
+			'KSSAccessKeyId' => "your access id",
 			)
            );
            
