@@ -33,6 +33,7 @@
     	global $proto;
     	$query = args_deal($credentials["query"]);
     	$sign = sign_create($credentials);
+    	$sign = rawurlencode($sign);
     	$object = rawurlencode($credentials['object']);
     	$url = $proto.$credentials['bucket'].$host.$object.$query.'&Signature='.$sign;
     	echo $url;
