@@ -37,7 +37,8 @@ function def_policy(){
 [\"starts-with\", \"\$key\", \"$key\"],
 [\"content-length-range\", 0,  5000000000 ],
 {\"success_action_redirect\": \"$redirect\"},
-[\"starts-with\", \"\$Content-Type\", \"text/html\" ]
+[\"starts-with\", \"\$Content-Type\", \"text/html\" ],
+{\"acl\":\"public-read\"}
 ]
 }";
 
@@ -65,6 +66,7 @@ $sign = cal_sign($policy);
 	Key to upload: <input type="input" name="key" value="<?php echo $key;?>"/><br />
 	<input type="hidden" name="KSSAccessKeyId" value="<?php echo $access_id;?>"/>
 	<input type="hidden" name="Policy" value="<?php echo $policy;?>"/>
+	<input type="hidden" name="acl" value="public-read" />
 	<input type="hidden" name="Signature" value="<?php echo $sign;?>"  />
 	<input type="hidden" name="success_action_redirect" value="<?php echo $redirect;?>"  />
 	<input type="hidden" name="Content-Type" value="text/html" />
